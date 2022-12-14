@@ -37,12 +37,12 @@ public class Main {
         buckets[i] = new ArrayList<Integer>();
         }
 
-        // sort
+        
         boolean flag = false;
         int tmp = -1, divisor = 1;
             while (!flag) {
                 flag = true;
-                // split input between lists
+                
                 for (Integer i : input) {
                     tmp = i / divisor;
                     buckets[tmp % 10].add(i);
@@ -50,7 +50,7 @@ public class Main {
                         flag = false;
                     }
                 }
-                // empty lists into input array
+                
                 int a = 0;
                 for (int b = 0; b < 10; b++) {
                     for (Integer i : buckets[b]) {
@@ -58,7 +58,7 @@ public class Main {
                     }
                     buckets[b].clear();
                 }
-                // move to next digit
+                
                 divisor *= 10;
             }
         }
